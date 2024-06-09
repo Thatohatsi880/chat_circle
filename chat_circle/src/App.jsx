@@ -4,7 +4,7 @@ import {
   Routes, Route
 } from "react-router-dom";
 
-import { createPosts, displayPosts, homePage, landingPage, Login, signUp } from "./Pages"
+import {CreatePosts, DisplayPosts, HomePage, LandingPage, Login, SignUp } from "./Pages"
 
 
 function App () {
@@ -12,14 +12,14 @@ function App () {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<homePage/>} />
+        <Route path="/" element={<HomePage/>} />
         <Route>
-          <Route path="/" index element={<createPosts/>} />
-          <Route path="/" element={<displayPosts/>} />
+          <Route path="/" index element={<CreatePosts/>} />
+          <Route path="/" element={<DisplayPosts/>} />
         </Route>
-        <Route path="/" element={<landingPage/>}/>
+        <Route path="/" element={<LandingPage/>}/>
         <Route path="/" element={<Login/>}/>
-        <Route path="/" element={<signUp/>}/>
+        <Route path="/" element={<SignUp/>}/>
       </Routes>
     </BrowserRouter>
   )
