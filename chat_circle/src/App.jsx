@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, CreatePosts, DisplayPosts, LandingPage, Login, SignUp } from './Pages';
+import { HomePage, CreatePosts, DisplayPosts, LandingPage, Login, SignUp } from './pages';
 
 function App() {
   return (
