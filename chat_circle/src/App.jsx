@@ -7,11 +7,11 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* Other Pages */}
-        <Route path="/create-posts" element={<CreatePosts />} />
-        <Route path="/display-posts" element={<DisplayPosts />} />
-        <Route path="/home-page" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/CreatePosts" element={<CreatePosts />} />
+        <Route path="/DisplayPosts" element={<DisplayPosts />} />
+        <Route path="/HomePage" element={<HomePage />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
