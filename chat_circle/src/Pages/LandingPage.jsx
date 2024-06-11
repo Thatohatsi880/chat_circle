@@ -40,8 +40,8 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="space-x-4 flex">
-            <button onClick={toggleMode} className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign Up</button>
-            <button onClick={toggleMode} className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign In</button>
+            <Link to="/SignUp" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign Up</Link>
+            <Link to="/SignIn" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign In</Link>
           </div>
         </div>
       </nav>
@@ -109,7 +109,7 @@ const LandingPage = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="py-1 pl-3 pr-1 ml-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none w-1/5" // Adjusted width
+              className="py-1 pl-3 pr-1 ml-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none w-1/2" // Adjusted width
             />
             <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded">Subscribe to mail</button>
           </div>
