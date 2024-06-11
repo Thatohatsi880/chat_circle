@@ -23,7 +23,7 @@ const LandingPage = () => {
     <div>
       <nav className="bg-gray-800 p-4">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-white text-xl font-bold">MyForum</Link>
+          <Link to="/HomePage" className="text-white text-xl font-bold">MyForum</Link>
           <div className="flex-grow flex justify-center">
             <div className="relative w-full max-w-lg">
               <button className="absolute left-2 top-2 text-white">
@@ -41,7 +41,7 @@ const LandingPage = () => {
           </div>
           <div className="space-x-4 flex">
             <Link to="/SignUp" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign Up</Link>
-            <Link to="/SignIn" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign In</Link>
+            <Link to="/Login" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign In</Link>
           </div>
         </div>
       </nav>

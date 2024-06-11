@@ -158,7 +158,7 @@ const SignUp = () => {
               Sign in with Google
             </button>
             {/* Login Link */}
-            <p className="text-center mt-2">Already have an account? <a href="/signin" className="text-blue-500">Login</a></p>
+            <p className="text-center mt-2">Already have an account? <a href="/Login" className="text-blue-500">Login</a></p>
           </div>
         </div>
       </div>
