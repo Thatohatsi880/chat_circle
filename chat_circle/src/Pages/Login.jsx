@@ -5,14 +5,16 @@ const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
+    rememberMe: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === 'checkbox' ? checked : value,
     });
   };
 
@@ -76,15 +78,28 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={handleTogglePasswordVisibility}
-                  className="absolute right-0 mt-5 mr-2"
+                  className="absolute inset-y-0 right-0 mt-2 mr-2 flex items-center text-gray-600"
                 >
                   {showPassword ? <FiEyeOff /> : <FiEye />}
                 </button>
               </div>
             </div>
-            <p className="text-sm text-left text-gray-600 mb-4">
-              <a href="/reset-password" className="text-blue-500">Forgot password?</a>
-            </p>
+            <div className="mb-4 flex justify-between items-center">
+              <p className="text-sm text-left text-gray-600">
+                <a href="/reset-password" className="text-blue-500">Forgot password?</a>
+              </p>
+            </div>
+            <div className="mb-4 flex items-center">
+              <input
+                type="checkbox"
+                id="rememberMe"
+                name="rememberMe"
+                checked={formData.rememberMe}
+                onChange={handleChange}
+                className="mr-2"
+              />
+              <label htmlFor="rememberMe" className="text-gray-700">Remember me</label>
+            </div>
             <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
               Sign In
             </button>
@@ -105,7 +120,7 @@ const Login = () => {
             <p className="text-center mt-2">Don't have an account? <a href="/SignUp" className="text-blue-500">Sign Up</a></p>
           </div>
         </div>
-      </div>
+    </div>
   );
 };
 
