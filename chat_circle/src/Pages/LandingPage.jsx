@@ -1,6 +1,9 @@
 import React, { useState } from 'react'; // Importing useState hook
 import { Link } from 'react-router-dom';
 import { FaMicrophone, FaSearch, FaEnvelope } from 'react-icons/fa'; // Importing the microphone, search, and envelope icons from react-icons
+import logo from '../assets/icons/chatCircleLogo.svg';
+import searchIcon from '../assets/icons/search-normal.svg';
+import microphoneIcon from '../assets/icons/microphone-2.svg';
 
 const LandingPage = () => {
   const [mode, setMode] = useState('signup'); // State to track current mode: 'signin' or 'signup'
@@ -23,19 +26,20 @@ const LandingPage = () => {
     <div>
       <nav className="bg-gray-800 p-4">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-white text-xl font-bold">MyForum</Link>
+          <Link to="/" className="text-white text-xl font-bold"><img src={logo} alt="chat circle logo" /></Link>
           <div className="flex-grow flex justify-center">
             <div className="relative w-full max-w-lg">
-              <button className="absolute left-2 top-2 text-white">
-                <FaSearch />
-              </button>
+              <div className="absolute left-2 top-2 text-white">
+                {/* <searchIcon /> */}
+                <img src={searchIcon} alt="search Icon" />
+              </div>
               <input
                 type="text"
                 placeholder="Search for a topic..."
                 className="py-2 pl-10 pr-4 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none w-full"
               />
               <button className="absolute right-2 top-2 text-white">
-                <FaMicrophone />
+              <img src={microphoneIcon} alt="search Icon" />
               </button>
             </div>
           </div>
