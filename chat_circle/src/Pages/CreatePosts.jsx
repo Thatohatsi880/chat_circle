@@ -4,7 +4,7 @@ import { FiBell, FiMessageSquare, FiUser, FiChevronDown, FiPlus, FiSearch, FiMic
 const IntegratedComponent = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [showCategories, setShowCategories] = useState(false);
+  const [showCategories, setShowCategories] = useState({});
   const [userMenuVisible, setUserMenuVisible] = useState(false);
 
   const handleTitleChange = (e) => {
@@ -20,8 +20,11 @@ const IntegratedComponent = () => {
     console.log('Post submitted:', { title, content });
   };
 
-  const toggleCategories = () => {
-    setShowCategories(!showCategories);
+  const toggleCategories = (category) => {
+    setShowCategories((prevShowCategories) => ({
+      ...prevShowCategories,
+      [category]: !prevShowCategories[category],
+    }));
   };
 
   const toggleUserMenu = () => {
@@ -73,11 +76,11 @@ const IntegratedComponent = () => {
           </div>
           <div className="mb-6">
             <h2 className="text-lg font-bold mb-4">Categories</h2>
-            <div className="flex items-center justify-between mb-2 cursor-pointer" onClick={toggleCategories}>
+            <div className="flex items-center justify-between mb-2 cursor-pointer" onClick={() => toggleCategories('mainCategories')}>
               <span className="text-gray-700">Categories</span>
               <FiChevronDown />
             </div>
-            {showCategories && (
+            {showCategories.mainCategories && (
               <ul className="ml-4">
                 <li className="mb-2">
                   <a href="#" className="text-gray-700">Category 1</a>
@@ -153,20 +156,20 @@ const IntegratedComponent = () => {
             <div className="mb-4">
               <label className="block text-gray-700 mb-2">Photo (optional)</label>
               <div className="border-2 border-dashed rounded p-4 text-center">
+                Drag and drop or click to upload
               </div>
-              <div className="border-2 border-dashed rounded p-4 text-center">Drag and drop or click to upload</div>
             </div>
             <div className="mb-4 flex items-center">
-            <label className="block text-gray-700 mb-2 mr-2">Share as Anonymous</label>
+              <label className="block text-gray-700 mb-2 mr-2">Share as Anonymous</label>
               <input type="checkbox" className="mr-2" />
-              <span className="text-gray-500 text-sm">Your Post will be displayed as anonymous and others won't be able to see your name/profile as well as messaging you.</span>
+              <span className="text-gray-500 text-sm">Your post will be displayed as anonymous and others won't be able to see your name/profile or message you.</span>
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 mb-2">Question Tags (up to 10)</label>
               <input
                 type="text"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Add up to 10 key words people can use to discover your questions. Separate each with a comma."
+                placeholder="Add up to 10 keywords people can use to discover your questions. Separate each with a comma."
               />
             </div>
             <div className="mb-4">
@@ -180,37 +183,58 @@ const IntegratedComponent = () => {
 
         {/* Right Sidebar */}
         <div className="w-1/6 bg-white p-4 shadow-md">
-          <h2 className="text-lg font-bold mb-4">Categories</h2>
+          <h2 className="text-lg font-bold mb-4">Popular Categories</h2>
           <div>
-            <h3 className="text-gray-700 font-bold">Science & Technology</h3>
-            <ul className="mb-4">
-              <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
-              <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
-            </ul>
-            <h3 className="text-gray-700 font-bold">Arts & Entertainment</h3>
-            <ul className="mb-4">
-              <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
-              <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
-            </ul>
-            <h3 className="text-gray-700 font-bold">Business & Finance</h3>
-            <ul className="mb-4">
-              <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
-              <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
-            </ul>
-            <h3 className="text-gray-700 font-bold">Lifestyle & Wellness</h3>
-            <ul className="mb-4">
-              <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
-              <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
-            </ul>
-            <h3 className="text-gray-700 font-bold">Hobbies & Interests</h3>
-            <ul className="mb-4">
-              <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
-              <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
-            </ul>
+            <h3 className="text-gray-700 font-bold cursor-pointer" onClick={() => toggleCategories('scienceTechnology')}>
+              Science & Technology <FiChevronDown />
+            </h3>
+            {showCategories.scienceTechnology && (
+              <ul className="ml-4 mb-4">
+                <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
+                <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
+              </ul>
+            )}
+            <h3 className="text-gray-700 font-bold cursor-pointer" onClick={() => toggleCategories('artsEntertainment')}>
+              Arts & Entertainment <FiChevronDown />
+            </h3>
+            {showCategories.artsEntertainment && (
+              <ul className="ml-4 mb-4">
+                <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
+                <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
+              </ul>
+            )}
+            <h3 className="text-gray-700 font-bold cursor-pointer" onClick={() => toggleCategories('businessFinance')}>
+              Business & Finance <FiChevronDown />
+            </h3>
+            {showCategories.businessFinance && (
+              <ul className="ml-4 mb-4">
+                <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
+                <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
+              </ul>
+            )}
+            <h3 className="text-gray-700 font-bold cursor-pointer" onClick={() => toggleCategories('lifestyleWellness')}>
+              Lifestyle & Wellness <FiChevronDown />
+            </h3>
+            {showCategories.lifestyleWellness && (
+              <ul className="ml-4 mb-4">
+                <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
+                <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
+              </ul>
+            )}
+            <h3 className="text-gray-700 font-bold cursor-pointer" onClick={() => toggleCategories('hobbiesInterests')}>
+              Hobbies & Interests <FiChevronDown />
+            </h3>
+            {showCategories.hobbiesInterests && (
+              <ul className="ml-4 mb-4">
+                <li><a href="#" className="text-gray-700">Sub-category 1</a></li>
+                <li><a href="#" className="text-gray-700">Sub-category 2</a></li>
+              </ul>
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default IntegratedComponent;
