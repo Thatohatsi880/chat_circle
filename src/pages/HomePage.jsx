@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiBell, FiMessageCircle, FiUser, FiChevronDown, FiPlus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const [showProfileOptions, setShowProfileOptions] = useState(false);
@@ -72,7 +73,7 @@ const HomePage = () => {
               <a href="#" className="text-gray-700">Bookmarks</a>
             </li>
             <li className="mb-2">
-              <a href="#" className="text-gray-700">Drafts</a>
+            <Link to="/LandingPage" className="text-gray-700">Drafts</Link>
             </li>
           </ul>
         </div>
