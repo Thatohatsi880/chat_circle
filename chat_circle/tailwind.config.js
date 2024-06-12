@@ -10,6 +10,7 @@ export default {
         textGrey:'#3A3D4A',
         cardBg_grey: '#2D2E39',
         lightGrey:'#D1D2DA',
+        lightOrange:'#FEF2E6',
 
       }
     },

@@ -3,8 +3,42 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    box-sizing: border-box;
+}
 :root {
-    font-family: "DM Sans", sans-serif;
-    font-style: normal;
-    font-optical-sizing: auto;
+        font-family: "DM Sans", sans-serif;
+        font-style: normal;
+        font-optical-sizing: auto;
+
+}
+
+.hero-background{
+    background: linear-gradient(90deg, #FFFFFF 49%, #FFFFFF 72%, #FDEFC6 100%);
+}
+.button-base{
+    min-width: 200px;
+    min-height: 48px;
+    padding: 5px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-action{
+    background-color: #F08000;
+    border: 1px solid #F08000;
+    color: #FFFFFF;
+}
+.underlines{
+    border-bottom: 1px solid #F08000;   
+}
+.testimonials {
+    min-width: 24rem;
+    height: 22rem;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #F0F1F3;
 }
