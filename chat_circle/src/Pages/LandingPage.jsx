@@ -1,6 +1,15 @@
 import React, { useState } from 'react'; // Importing useState hook
 import { Link } from 'react-router-dom';
-import { FaMicrophone, FaSearch, FaEnvelope } from 'react-icons/fa'; // Importing the microphone, search, and envelope icons from react-icons
+import { Footer } from './components';
+import logo from '../assets/icons/chatCircleLogo.svg';
+import searchIcon from '../assets/icons/search-normal.svg';
+import microphoneIcon from '../assets/icons/microphone-2.svg';
+import quoteIcon from '../assets/icons/quote-up.svg';
+import arrowIcon from '../assets/icons/arrow-up.svg';
+import heroImage from '../assets/images/hero_img1.png';
+import heroGroup from '../assets/images/hero_group1.png';
+import popularImage from '../assets/images/popular_img.png';
+import engagingImage from '../assets/images/engagingchats.png';
 
 const LandingPage = () => {
   const [mode, setMode] = useState('signup'); // State to track current mode: 'signin' or 'signup'
@@ -20,125 +29,98 @@ const LandingPage = () => {
   };
 
   return (
-    <div>
-      <nav className="bg-gray-800 p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-white text-xl font-bold">MyForum</Link>
-          <div className="flex-grow flex justify-center">
+    <div className='container m-auto '>
+      <nav className="justify-between m-0 mt-4">
+        <div className="container mx-auto flex justify-between items-center ">
+          <Link to="/" className="text-white text-xl font-bold"><img src={logo} alt="chat circle logo" /></Link>
             <div className="relative w-full max-w-lg">
-              <button className="absolute left-2 top-2 text-white">
-                <FaSearch />
-              </button>
+              <div className="absolute left-2 top-2 text-white">
+                <img src={searchIcon} alt="search Icon" />
+              </div>
               <input
                 type="text"
                 placeholder="Search for a topic..."
-                className="py-2 pl-10 pr-4 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none w-full"
+                className="py-2 pl-10 pr-4 rounded rounded-xl  text-textGrey placeholder-gray-400 focus:outline-none w-full border border-lightGrey"
               />
               <button className="absolute right-2 top-2 text-white">
-                <FaMicrophone />
+              <img src={microphoneIcon} alt="search Icon" />
               </button>
             </div>
-          </div>
-          <div className="space-x-4 flex">
-            <Link to="/SignUp" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign Up</Link>
-            <Link to="/Login" className="text-gray-300 hover:text-white border border-gray-300 px-4 py-2 rounded">Sign In</Link>
+          <div className="space-x-4 flex gap-4">
+            <Link to="/SignUp" className="text-white hover:text-white border bg-primaryOrange border-primaryOrange px-4 py-2 rounded rounded-xl w-48 text-center font-bold">SIGN UP</Link>
+            <Link to="/Login" className="text-primaryOrange hover:text-white border border-primaryOrange px-4 py-2 rounded rounded-xl w-48 text-center font-bold">SIGN IN</Link>
           </div>
         </div>
       </nav>
-      <div className="flex justify-between mt-8">
-        <div className="flex flex-col items-start ml-8">
-          <h2 className="text-lg font-bold">Post questions, Get 
-            <div>answers, and Engage in</div>
-            <div>discussions on various topics</div>
+      <div className="flex mt-8 pt-10 hero-background justify-center items-center">
+        <div className="flex flex-col w-2/5  gap-5 ">
+          <h2 className="text-5xl font-normal leading-tight">Post <span className='text-primaryOrange font-bold'>questions</span>, Get <span className='text-primaryOrange font-bold'>answers</span>, and Engage in <span className='text-primaryOrange font-bold'>discussions</span> on various topics
           </h2>
-          <div className="flex mt-4">
-            <button className={`mr-2 border px-4 py-2 rounded ${startDiscussion ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'}`} onClick={handleStartDiscussion}>Start a discussion</button>
-            <button className={`border px-4 py-2 rounded ${browseTopics ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'}`} onClick={handleBrowseTopics}>Browse topics</button>
+          <div className="flex mt-4 gap-1">
+            <button className={`button-action button-base  ${startDiscussion ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'}`} onClick={handleStartDiscussion}>START A DISCUSSION</button>
+            <button className={`button-base text-primaryOrange gap-3 ${browseTopics ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'}`} onClick={handleBrowseTopics}>BROWSE TOPICS<img src={arrowIcon} alt="Arrow Icon" /></button>
           </div>
         </div>
-        <div className="w-1/3 mr-8">
-          <h2 className="text-lg font-bold mb-4">Jumble of Conversations</h2>
-          {/* Placeholder for jumble of conversations */}
-          {/* Here, you can render conversations with people's profile pictures */}
+        <div className="w-3/5 relative flex justify-center">
+        <img src={heroImage} alt=""  className='z-10 ml-5'/>
+        <img src={heroGroup} alt="" className='z-50 absolute top-14 max-h-min bg-contain'/>
         </div>
+      </div>
+
+      <div className="mt-12 flex gap-4 max-h-max">
+          <div className="w-2/4 ">
+          <img src={popularImage} alt="Screenshots of popular threads" />
+          </div>
+          <div className=" w-2/4 flex flex-col justify-center gap-8">
+          <h2 className="text-2xl font-bold text-primaryOrange"><span className='underlines'>Popular O</span>N ChatCircle</h2>
+          <p className='text-5xl font-normal leading-tight text-textGrey'>Find answers, share knowledge, and connect with passionate people</p>
+          </div>
       </div>
       <br/>
       <br/>
+
+      <div className="flex items-center ">
+          <div className="w-2/4 flex flex-col gap-8">
+          <h2 className="text-4xl font-bold w-3/4 text-primaryOrange">Most Engaging threads on <span className='underlines'>ChatCircle</span></h2>
+          <p className='text-5xl font-normal leading-tight text-textGrey tracking-wider'>Have a closer look at trending topics and discussions in our forum</p>
+          </div>
+          <div className="w-2/4"><img src={engagingImage} alt="Screenshots of engaging chats" /></div>
+      </div>
       <div className="mt-12">
-        <div className="flex justify-between">
-          <div className="bg-gray-200 p-4 w-1/4 h-32">Square</div>
-          <div className="w-1/3 mr-8">
-            <h1 className="text-lg font-bold mb-4">People ON ChatCircle</h1>
-            <h2 className="text-lg font-bold mb-4">Find answers, share knowledge,</h2>
-            <h2 className="text-lg font-bold mb-4">and connect connect with passionate</h2>
-            <h2 className="text-lg font-bold mb-4">People </h2>
-            {/* Placeholder for jumble of conversations */}
-            {/* Here, you can render conversations with people's profile pictures */}
-          </div>
-        </div>
-      </div>
-      <br/>
-      <br/>
-      <div className="mt-12">
-      <div className="flex justify-between">
-      <div className="w-1/3 mr-8">
-      <h1 className="text-lg font-bold mb-4">Most Engaging threads on ChatCircle</h1>
-            <h2 className="text-lg font-bold mb-4">Have a closer look at trending</h2>
-            <h2 className="text-lg font-bold mb-4">topics and dicussions in our</h2>
-            <h2 className="text-lg font-bold mb-4">forum</h2>
-          </div>
-          <div className="bg-gray-200 p-4 w-1/4 h-32">Square
-          </div>
-      </div>
-      <br/>
-      <br/>
-      <div className="mt-12">
-        <h1 className="text-lg font-bold ml-8">Testimonials</h1>
-        <div className="flex justify-around mt-8">
-          <div className="bg-gray-200 p-4 w-1/4 h-32">Square 1</div>
-          <div className="bg-gray-200 p-4 w-1/4 h-32">Square 2</div>
-          <div className="bg-gray-200 p-4 w-1/4 h-32">Square 3</div>
-        </div>
-      </div>
-      <hr className="my-8 border-gray-300"/>
-      <footer className="bg-gray-800 p-4 text-white">
-        <div className="container mx-auto">
-          <div className="flex items-center mb-4"> {/* Subscription section */}
-            <FaEnvelope className="mr-5" />
-            <span>Subscribe to receive email updates</span>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="py-1 pl-3 pr-1 ml-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none w-1/2" // Adjusted width
-            />
-            <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded">Subscribe to mail</button>
-          </div>
-          <div className="flex justify-between mb-4"> {/* MyForum logo and dummy message */}
+        <h1 className="text-4xl font-bold text-textGrey">Testimonials</h1>
+        <div className="flex justify-between mt-8">
+          <div className="testimonials p-4 w-1/4 h-32 flex flex-col gap-2">
+            <div><img src={quoteIcon} alt="Quotation icon" /></div>
+            <p>I never thought I'd find a community like this online! Joining the forum has been a game-changer. I've learned so much from other hobbyists in the 'DIY & Crafts' section, and everyone's so supportive. Now I feel confident tackling new projects and sharing my own creations. Thanks for this amazing space!</p>
+            <hr />
             <div>
-              <Link to="/" className="text-white text-xl font-bold">MyForum</Link>
-              <div className="mt-2">Dummy message</div> {/* Dummy message */}
-            </div>
-            <div className="flex justify-center"> {/* Quick Links */}
-              <ul>
-                <h4 className="font-bold">Quick Links</h4>
-                <li><Link to="/ask">Ask a Question</Link></li>
-                <li><Link to="/categories">Categories</Link></li>
-                <li><Link to="/drafts">Drafts</Link></li>
-                <li><Link to="/help">Help</Link></li>
-              </ul>
-            </div>
-            <div> {/* Contacts */}
-              <div className="font-bold">Contacts</div>
-              <div>www.chatcircle.com</div>
-              <div>Email: name@example.com</div>
-              <div>Location: locations</div>
-              <div>Tel: +237 60000000</div>
-              <div>Extra, extra, extra</div>
-            </div>
+            <h5 className='font-bold'>Sarah M.</h5>
+            <p>Home Decor Enthusias</p>
+            </div> 
           </div>
+          <div className="testimonials p-4 w-1/4 h-32 flex flex-col gap-2">
+            <div><img src={quoteIcon} alt="Quotation icon" /></div>
+            <p>This forum has been my go-to resource for years. As a programmer, I constantly find insightful discussions and solutions in the 'Programming' category. It's a fantastic platform to learn from others, share my knowledge, and stay updated on the latest trends. I highly recommend it to anyone in the tech field!</p>
+            <hr />
+            <div>
+            <h5 className='font-bold'>David L</h5>
+            <p>Senior Software Developer</p>
+            </div> 
+          </div>
+          <div className="testimonials p-4 w-1/4 h-32 flex flex-col gap-2">
+            <div><img src={quoteIcon} alt="Quotation icon" /></div>
+            <p>I'm so grateful for this forum! As a college student, the 'Education & Careers' section has been invaluable for navigating my academic path. I've gotten fantastic advice on choosing a major, preparing for exams, and even landing internships. The discussions with other students and professionals have been incredibly helpful</p>
+            <hr />
+            <div>
+            <h5 className='font-bold'>Emily C</h5>
+            <p>Aspiring Marketing Professional</p>
+            </div> 
+          </div>
+         
         </div>
-      </footer>
-    </div>
+      </div>
+      
+      <Footer/>
     </div>
   );
 };
