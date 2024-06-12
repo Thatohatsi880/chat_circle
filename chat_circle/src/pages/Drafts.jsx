@@ -6,6 +6,11 @@ const IntegratedComponent = () => {
   const [content, setContent] = useState('');
   const [showCategories, setShowCategories] = useState({});
   const [userMenuVisible, setUserMenuVisible] = useState(false);
+  const [messages, setMessages] = useState([
+    { id: 1, text: 'Hello, how are you?', time: '10:00 AM', date: '2024-06-11' },
+    { id: 2, text: 'I am good, thanks! What about you?', time: '10:05 AM', date: '2024-06-11' },
+  ]);
+  const [newMessage, setNewMessage] = useState('');
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -18,6 +23,24 @@ const IntegratedComponent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Post submitted:', { title, content });
+  };
+
+  const handleNewMessageChange = (e) => {
+    setNewMessage(e.target.value);
+  };
+
+  const handleNewMessageSubmit = (e) => {
+    e.preventDefault();
+    if (newMessage.trim()) {
+      const newMsg = {
+        id: messages.length + 1,
+        text: newMessage,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        date: new Date().toLocaleDateString(),
+      };
+      setMessages([...messages, newMsg]);
+      setNewMessage('');
+    }
   };
 
   const toggleCategories = (category) => {
@@ -126,64 +149,39 @@ const IntegratedComponent = () => {
           </div>
         </div>
 
-        <div className="flex-1 p-4">
-          <div className="flex justify-between items-center mb-4">
-            <button className="text-blue-500">&larr; Back</button>
-            <button className="bg-gray-200 text-gray-700 py-2 px-4 rounded">Save Draft</button>
+          {/* Conversation Section */}
+          <div className="mt-8">
+            <h2 className="text-2xl font-bold mb-4">Drafts</h2>
+            <div className="bg-white p-5 rounded shadow-md" >
+              {messages.map((message) => (
+                <div key={message.id} className="mb-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-700">{message.text}</span>
+                    <div className="flex space-x-2 text-gray-500 text-sm">
+                      <span>{message.time}</span>
+                      <span>{message.date}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* New Message Form */}
+            <form onSubmit={handleNewMessageSubmit} className="mt-4">
+              <input
+                type="text"
+                value={newMessage}
+                onChange={handleNewMessageChange}
+                className="border rounded w-full py-2 px-3 mb-2"
+                placeholder="Type a new message..."
+              />
+              <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">Send</button>
+            </form>
           </div>
-          <h2 className="text-2xl font-bold mb-4">Make a Post</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Title</label>
-              <input
-                type="text"
-                value={title}
-                onChange={handleTitleChange}
-                className="border rounded w-full py-2 px-3"
-                placeholder="Post Title"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Description</label>
-              <textarea
-                value={content}
-                onChange={handleContentChange}
-                className="border rounded w-full py-2 px-3"
-                placeholder="Post Content"
-                rows="10"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Photo (optional)</label>
-              <div className="border-2 border-dashed rounded p-4 text-center">
-                Drag and drop or click to upload
-              </div>
-            </div>
-            <div className="mb-4 flex items-center">
-              <label className="block text-gray-700 mb-2 mr-2">Share as Anonymous</label>
-              <input type="checkbox" className="mr-2" />
-              <span className="text-gray-500 text-sm">Your post will be displayed as anonymous and others won't be able to see your name/profile or message you.</span>
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Question Tags (up to 10)</label>
-              <input
-                type="text"
-                className="border rounded w-full py-2 px-3"
-                placeholder="Add up to 10 keywords people can use to discover your questions. Separate each with a comma."
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Captcha</label>
-              <input type="text" className="border rounded w-full py-2 px-3" placeholder="Type the word above" />
-              <button className="mt-2 bg-gray-200 text-gray-700 py-2 px-4 rounded">Verify</button>
-            </div>
-            <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">Publish</button>
-          </form>
         </div>
 
-        {/* Right Sidebar */}
         <div className="w-1/6 bg-white p-4 shadow-md">
-          <h2 className="text-lg font-bold mb-4">Popular Categories</h2>
+          <h2 className="text-lg font-bold mb-4">Categories</h2>
           <div>
             <h3 className="text-gray-700 font-bold cursor-pointer" onClick={() => toggleCategories('scienceTechnology')}>
               Science & Technology <FiChevronDown />
@@ -233,7 +231,6 @@ const IntegratedComponent = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
