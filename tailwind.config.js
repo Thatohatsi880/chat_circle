@@ -11,6 +11,7 @@ export default {
         cardBg_grey: '#2D2E39',
         lightGrey:'#D1D2DA',
         lightOrange:'#FEF2E6',
+        bgLightGrey: '#F0F1F3',
 
       }
     },
