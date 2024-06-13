@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/icons/chatCircleLogo.svg';
+import googleIcon from '../assets/icons/flat-color-icons_google.svg';
+import signupImage from '../assets/images/signup_img.png';
+import heroGroup from '../assets/images/hero_group1.png';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -76,93 +81,100 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-gray-100">
-      <div className="flex w-full">
-        {/* Left side - Picture Placeholder */}
-        <div className="w-1/2 bg-gray-200 flex items-center justify-center">
-          <div className="w-full h-full flex items-center justify-center bg-gray-300">
-            <span className="text-gray-700 text-xl">Picture Placeholder</span>
-          </div>
-        </div>
+    <div className="min-h-screen flex w-full">
+  {/* Left side - Picture Placeholder */}
+  <div className="hidden lg:flex md:w-[45%] bg-bgOrange items-center justify-center">
+    <div className="relative w-4/5 m-auto">
+      <img src={signupImage} alt="" className='z-4 w-full h-auto' />
 
-        {/* Right side - Sign Up Form */}
-        <div className="w-1/2 flex items-center justify-center p-8">
-          <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
-            {/* myForum Logo */}
-            <div className="flex justify-center mb-4">
-              <img src="/path/to/your/myForum-logo.png" alt="myForum Logo" className="h-12" />
-            </div>
-            {/* Text below logo */}
-            <p className="text-center text-gray-600 mb-2">
-              By clicking "Sign up", you agree to our{' '}
-              <span className="font-bold">terms of service</span> and acknowledge you have read our{' '}
-              <span className="font-bold">privacy policy</span>
-            </p>
-            <br/>
-            <br/>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label className="block text-gray-700" htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full mt-2 p-2 border border-gray-300 rounded"
-                  required
-                />
-                {errors.email && <p className="text-red-500">{errors.email}</p>}
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700" htmlFor="username">Username:</label>
-                <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  value={formData.username}
-                  onChange={handleChange}
-                  className="w-full mt-2 p-2 border border-gray-300 rounded"
-                  required
-                />
-                {errors.username && <p className="text-red-500">{errors.username}</p>}
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700" htmlFor="password">Password:</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="w-full mt-2 p-2 border border-gray-300 rounded"
-                  required
-                />
-                {errors.password && <p className="text-red-500">{errors.password}</p>}
-              </div>
-              <br/>
-              <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
-                Sign Up
-              </button>
-            </form>
-            <br/>
-            <br/>
-            <div className="flex items-center mt-4">
-              <hr className="flex-grow border-gray-300" />
-              <div className="mx-4 text-gray-500">OR</div>
-              <hr className="flex-grow border-gray-300" />
-            </div>
-            <br/>
-            {/* Google Sign-in Button */}
-            <button className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">
-              Sign in with Google
-            </button>
-            {/* Login Link */}
-            <p className="text-center mt-2">Already have an account? <a href="/Login" className="text-blue-500">Login</a></p>
-          </div>
-        </div>
+      <div className="z-50 absolute top-[50px] left-[-50px] w-[303px] h-[116px] p-4 bg-white rounded-[24px_0px_24px_24px] shadow-md flex flex-col justify-center">
+        <h3 className="text-md font-bold text-primaryOrange">Find answers & share knowledge:</h3>
+        <p className="text-sm">Join a community of passionate people discussing forum's focus topics</p>
+      </div>
+
+      <div className="z-60 absolute top-[280px] right-[-64px] w-[303px] h-[116px] p-4 bg-white rounded-[24px_0px_24px_24px] shadow-md flex flex-col justify-center items-start">
+        <h3 className="text-md font-bold text-primaryOrange">Get your voice heard:</h3>
+        <p className="text-sm">Share your ideas and connect with a supportive community</p>
+      </div>
+
+      <div className="z-80 absolute top-[462px] left-[-64px] w-[303px] h-[116px] p-4 bg-white rounded-[24px_0px_24px_24px] shadow-md flex flex-col justify-center">
+        <h3 className="text-md font-bold text-primaryOrange">Level up your skills:</h3>
+        <p className="text-sm">Learn from experts and collaborate with like-minded individuals</p>
       </div>
     </div>
+  </div>
+
+  {/* Right side - Sign Up Form */}
+  <div className='w-full md:w-[55%] flex justify-center items-center p-4'>
+    <div className="w-full max-w-xl bg-white p-8 rounded-lg shadow-md">
+      <div className="flex justify-center mb-4">
+        <Link to="/" className="text-white text-xl font-bold"><img src={logo} alt="chat circle logo" /></Link>
+      </div>
+      <p className="text-center text-gray-600 mb-4">
+        By clicking "Sign up", you agree to our{' '}
+        <span className="font-bold">terms of service</span> and acknowledge you have read our{' '}
+        <span className="font-bold">privacy policy</span>
+      </p>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-6">
+          <label className="block text-gray-700" htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full mt-2 p-2 border border-gray-300 rounded-xl h-12 text-xs focus:outline-none"
+            required
+            placeholder='Enter email here'
+          />
+          {errors.email && <p className="text-red-500">{errors.email}</p>}
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700" htmlFor="username">Username:</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value={formData.username}
+            onChange={handleChange}
+            className="w-full mt-2 p-2 border border-gray-300 rounded-xl h-12 text-xs focus:outline-none"
+            required
+            placeholder='Enter username here'
+          />
+          {errors.username && <p className="text-red-500">{errors.username}</p>}
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700" htmlFor="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full mt-2 p-2 border border-gray-300 rounded-xl h-12 text-xs focus:outline-none"
+            required
+            placeholder='Enter password here'
+          />
+          {errors.password && <p className="text-red-500">{errors.password}</p>}
+        </div>
+        <button type="submit" className="w-full h-12 bg-primaryOrange text-white py-2 rounded-xl hover:bg-white hover:text-primaryOrange hover:ring-primaryOrange">
+          SIGN UP
+        </button>
+      </form>
+      <div className="flex items-center mt-4">
+        <hr className="flex-grow border-gray-300" />
+        <div className="mx-4 text-gray-500">OR</div>
+        <hr className="flex-grow border-gray-300" />
+      </div>
+      <button className="w-full h-12 flex items-center justify-center rounded-xl gap-2 px-4 py-2 border-2 border-primaryOrange bg-white text-primaryOrange mt-4">
+        <img src={googleIcon} alt="Google Icon" className="w-5 h-5" /><span>Google</span>
+      </button>
+      <p className="text-center mt-4">Already have an account? <Link to="/Login" className="text-textGrey font-bold underline">Login</Link></p>
+    </div>
+  </div>
+</div>
+
   );
 };
 
