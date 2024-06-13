@@ -123,7 +123,7 @@ const Login = () => {
               <label htmlFor="rememberMe" className="text-gray-700">Remember me</label>
             </div>
             <button type="submit" className="w-full h-12 bg-primaryOrange text-white py-2 rounded-xl hover:bg-white hover:text-primaryOrange hover:ring-primaryOrange">
-              SIGN IN
+              <Link to="/HomePage" className="text-textGrey font-bold underline">SIGN IN</Link>
             </button>
           </form>
           <br/>
