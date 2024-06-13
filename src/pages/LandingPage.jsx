@@ -47,9 +47,9 @@ const LandingPage = () => {
               </button>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 w-4/5 sm:w-3/10 lg:w-1/3 justify-between mx-auto lg:mx-0">
-  <Link to="/SignUp" className="text-white hover:text-white border bg-primaryOrange border-primaryOrange px-4 py-2 rounded rounded-xl w-full lg:w-48 md:w-36 text-center font-bold mb-4 sm:mb-0">SIGN UP</Link>
-  <Link to="/Login" className="text-primaryOrange hover:text-white border border-primaryOrange px-4 py-2 rounded rounded-xl w-full lg:w-48 md:w-36 text-center font-bold">SIGN IN</Link>
-</div>
+              <Link to="/SignUp" className="text-white hover:text-white border bg-primaryOrange border-primaryOrange px-4 py-2 rounded rounded-xl w-full lg:w-48 md:w-36 text-center font-bold mb-4 sm:mb-0">SIGN UP</Link>
+              <Link to="/Login" className="text-primaryOrange hover:text-white border border-primaryOrange px-4 py-2 rounded rounded-xl w-full lg:w-48 md:w-36 text-center font-bold">SIGN IN</Link>
+            </div>
 
         </div>
       </nav>
