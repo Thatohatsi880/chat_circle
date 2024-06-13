@@ -84,7 +84,7 @@ const SignUp = () => {
     <div className="min-h-screen flex w-full">
   {/* Left side - Picture Placeholder */}
   <div className="hidden lg:flex md:w-[45%] bg-bgOrange items-center justify-center">
-    <div className="relative w-4/5 m-auto border border-pink-800">
+    <div className="relative w-4/5 m-auto">
       <img src={signupImage} alt="" className='z-4 w-full h-auto' />
 
       <div className="z-50 absolute top-[50px] left-[-50px] w-[303px] h-[116px] p-4 bg-white rounded-[24px_0px_24px_24px] shadow-md flex flex-col justify-center">
@@ -170,7 +170,7 @@ const SignUp = () => {
       <button className="w-full h-12 flex items-center justify-center rounded-xl gap-2 px-4 py-2 border-2 border-primaryOrange bg-white text-primaryOrange mt-4">
         <img src={googleIcon} alt="Google Icon" className="w-5 h-5" /><span>Google</span>
       </button>
-      <p className="text-center mt-4">Already have an account? <Link to="/Login" className="text-primaryOrange font-bold underline">Login</Link></p>
+      <p className="text-center mt-4">Already have an account? <Link to="/Login" className="text-textGrey font-bold underline">Login</Link></p>
     </div>
   </div>
 </div>
