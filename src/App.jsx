@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, CreatePosts, Drafts, LandingPage, Login, SignUp } from './pages';
+import { HomePage, CreatePosts, Drafts, LandingPage, Login, SignUp, Bookmarks } from './pages';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Bookmarks" element={<Bookmarks />} />
       </Routes>
     </BrowserRouter>
   );
