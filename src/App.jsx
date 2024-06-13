@@ -6,10 +6,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/CreatePosts" element={<CreatePosts />} />
         <Route path="/Drafts" element={<Drafts />} />
-        <Route path="/LandingPage" element={<LandingPage />} />
+        <Route path="/Home" element={<HomePage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
       </Routes>
