@@ -54,7 +54,7 @@ const LandingPage = () => {
       </nav>
       <div className="flex mt-8 pt-10 hero-background justify-center items-center">
         <div className="flex flex-col w-2/5  gap-5 ">
-          <h2 className="text-5xl font-normal leading-tight">Post <span className='text-primaryOrange font-bold'>questions</span>, Get <span className='text-primaryOrange font-bold'>answers</span>, and Engage in <span className='text-primaryOrange font-bold'>discussions</span> on various topics
+          <h2 className="text-5xl text-textGrey font-normal leading-tight">Post <span className='text-primaryOrange font-bold'>questions</span>, Get <span className='text-primaryOrange font-bold'>answers</span>, and Engage in <span className='text-primaryOrange font-bold'>discussions</span> on various topics
           </h2>
           <div className="flex mt-4 gap-1">
             <button className={`button-action button-base  ${startDiscussion ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'}`} onClick={handleStartDiscussion}>START A DISCUSSION</button>
