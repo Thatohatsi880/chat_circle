@@ -12,6 +12,8 @@ export default {
         lightGrey:'#D1D2DA',
         lightOrange:'#FEF2E6',
         bgLightGrey: '#F0F1F3',
+        bgOrange: '#FAD8B0',
+        outlineOrange: '#F7CA48',
 
       }
     },
