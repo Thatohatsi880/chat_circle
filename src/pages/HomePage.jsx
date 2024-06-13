@@ -73,7 +73,7 @@ const HomePage = () => {
               <a href="#" className="text-gray-700">Bookmarks</a>
             </li>
             <li className="mb-2">
-            <Link to="/LandingPage" className="text-gray-700">Drafts</Link>
+            <Link to="/" className="text-gray-700">Drafts</Link>
             </li>
           </ul>
         </div>
