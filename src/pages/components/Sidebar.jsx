@@ -263,7 +263,7 @@ const Sidebar = () => {
 
 
               <span>Bookmarks</span>
-            </NavLink
+            </NavLink>
             </li>
 
           {/* Drafts */}
@@ -281,6 +281,9 @@ const Sidebar = () => {
 
               <span>Drafts</span>
             </NavLink>
+            </li>
+          </ul>
+        </div>
 
 {/* logout */}
         <div>
