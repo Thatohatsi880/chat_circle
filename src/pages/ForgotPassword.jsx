@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/icons/chatCircleLogo.svg';
-import forgotPwdImg from '../assets/icons/fgtPwdIllustration.svg'
+import forgotPwdImg from '../assets/icons/fgtPwdIllustration.svg';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex w-full border border-pink-800">
+    <div className="min-h-screen flex w-full">
         {/* Image */}
          <div className="hidden lg:flex md:w-[45%] bg-bgOrange items-center justify-center">
             <div className="w-4/5 m-auto">
@@ -55,7 +55,7 @@ const ForgotPassword = () => {
             type="submit"
             className="bg-primaryOrange text-white font-bold mt-6 py-2 px-4 rounded-xl hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50"
           >
-            Reset 
+            RESET 
           </button>
         </form>
 
