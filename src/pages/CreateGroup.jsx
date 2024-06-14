@@ -52,7 +52,7 @@ const CreateGroup = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2">Description</label>
+            <label className="block text-gray-700 mb-2">Description</label>
               <textarea
                 value={content}
                 onChange={handleContentChange}
