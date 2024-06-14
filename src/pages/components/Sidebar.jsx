@@ -41,7 +41,7 @@ const Sidebar = () => {
           <ul>
             <li className="">
               <NavLink
-                to="#"
+                to="/HomePage"
                 className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
                 activeClassName="bg-primaryOrange text-white"
               >
