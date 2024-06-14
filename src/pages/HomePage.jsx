@@ -4,7 +4,7 @@ import { Sidebar, Categories, Navbar } from './components';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen max-w-screen-xl m-auto bg-gray-100">
+    <div className="min-h-screen max-w-screen-xl mx-auto bg-gray-100">
       <Navbar />
 
       <div className='flex p-0 gap-10'>

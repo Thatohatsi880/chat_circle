@@ -15,7 +15,7 @@ const Navbar = () => {
   const toggleProfileOptions = () => setShowProfileOptions(!showProfileOptions);
 
   return (
-    <div className="flex w-full gap-4 justify-between items-center bg-white p-4 shadow-md">
+    <div className="flex w-full gap-4 justify-between items-center bg-white p-4 border border-grey-200 border-l-0 border-r-0">
         {/* Logo and Search Section */}
         <div className="flex items-center justify-between ml-14 md:ml-0 flex-grow gap-4 max-w-4xl ">
               <Link to="/" className="text-white text-xl font-bold hidden md:flex"><img src={logo} alt="chat circle logo" /></Link>
