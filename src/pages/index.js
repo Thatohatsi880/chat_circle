@@ -5,6 +5,6 @@ export { default as LandingPage } from './LandingPage';
 export { default as Login } from './Login';
 export { default as SignUp } from './SignUp';
 export { default as Bookmarks } from './Bookmarks';
-export {default as Groups} from './Groups';
+export { default as Groups } from './Groups';
 export { default as CreateGroup } from './CreateGroup';
 

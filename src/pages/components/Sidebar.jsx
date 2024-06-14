@@ -35,7 +35,7 @@ const Sidebar = () => {
       <div
         className={`fixed left-0 bg-white p-4 shadow-md transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 md:relative md:translate-x-0 md:w-64 md:mt-0 md:shadow-none border border-grey-200  border-l-0 min-h-screen rounded-r-2xl`}
+        } transition-transform duration-300 md:relative md:translate-x-0 md:w-64 md:mt-0 md:shadow-none border border-grey-200  border-l-0 border-t-0 min-h-screen rounded-r-2xl`}
       >
         <div className="mb-6 border border-grey-200 border-t-0 border-l-0 border-r-0">
           <ul>
@@ -98,11 +98,12 @@ const Sidebar = () => {
             </ul>
           )}
         </div>
+        {/* Groups */}
         <div className="mb-6 border border-grey-200 border-t-0 border-l-0 border-r-0">
           <ul>
             <li className="mb-2">
               <NavLink
-                to="#"
+                to="/Groups"
                 className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
                 activeClassName="bg-primaryOrange text-white"
               >
@@ -160,9 +161,10 @@ const Sidebar = () => {
                 <span>Groups</span>
               </NavLink>
             </li>
+            {/* Create a group */}
             <li className="mb-2">
               <NavLink
-                to="#"
+                to="/CreateGroup"
                 className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
                 activeClassName="bg-primaryOrange text-white"
               >
@@ -198,109 +200,178 @@ const Sidebar = () => {
 
         <div className="mb-6 border border-grey-200 border-t-0 border-l-0 border-r-0">
           <ul>
- {/* Messages */}
+            {/* Messages */}
             <li>
-            <NavLink
-              to="#"
-              className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
-              activeClassName="bg-primaryOrange text-white"
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                className="home_icons"
-                xmlns="http://www.w3.org/2000/svg"
+              <NavLink
+                to="#"
+                className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
+                activeClassName="bg-primaryOrange text-white"
               >
-                <path
-                  d="M8.5 19H8C4 19 2 18 2 13V8C2 4 4 2 8 2H16C20 2 22 4 22 8V13C22 17 20 19 16 19H15.5C15.19 19 14.89 19.15 14.7 19.4L13.2 21.4C12.54 22.28 11.46 22.28 10.8 21.4L9.3 19.4C9.14 19.18 8.77 19 8.5 19Z"
-                  stroke="#6A6E87"
-                  stroke-width="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M15.9965 11H16.0054"
-                  stroke="#6A6E87"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M11.9955 11H12.0045"
-                  stroke="#6A6E87"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M7.99451 11H8.00349"
-                  stroke="#6A6E87"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="home_icons"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.5 19H8C4 19 2 18 2 13V8C2 4 4 2 8 2H16C20 2 22 4 22 8V13C22 17 20 19 16 19H15.5C15.19 19 14.89 19.15 14.7 19.4L13.2 21.4C12.54 22.28 11.46 22.28 10.8 21.4L9.3 19.4C9.14 19.18 8.77 19 8.5 19Z"
+                    stroke="#6A6E87"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.9965 11H16.0054"
+                    stroke="#6A6E87"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.9955 11H12.0045"
+                    stroke="#6A6E87"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7.99451 11H8.00349"
+                    stroke="#6A6E87"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
 
-              <span>Messages</span>
-            </NavLink>
-            </li> 
-
-          {/* Bookmarks */}
-            <li className="mb-2">
-            <NavLink
-              to="#"
-              className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
-              activeClassName="bg-primaryOrange text-white"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="home_icons" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.89 5.87988H5.10999C3.39999 5.87988 2 7.27987 2 8.98987V20.3499C2 21.7999 3.04 22.4199 4.31 21.7099L8.23999 19.5199C8.65999 19.2899 9.34 19.2899 9.75 19.5199L13.68 21.7099C14.95 22.4199 15.99 21.7999 15.99 20.3499V8.98987C16 7.27987 14.6 5.87988 12.89 5.87988Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 8.98987V20.3499C16 21.7999 14.96 22.4099 13.69 21.7099L9.76001 19.5199C9.34001 19.2899 8.65999 19.2899 8.23999 19.5199L4.31 21.7099C3.04 22.4099 2 21.7999 2 20.3499V8.98987C2 7.27987 3.39999 5.87988 5.10999 5.87988H12.89C14.6 5.87988 16 7.27987 16 8.98987Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M22 5.10999V16.47C22 17.92 20.96 18.53 19.69 17.83L16 15.77V8.98999C16 7.27999 14.6 5.88 12.89 5.88H8V5.10999C8 3.39999 9.39999 2 11.11 2H18.89C20.6 2 22 3.39999 22 5.10999Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-
-              <span>Bookmarks</span>
-            </NavLink>
+                <span>Messages</span>
+              </NavLink>
             </li>
 
-          {/* Drafts */}
+            {/* Bookmarks */}
             <li className="mb-2">
-            <NavLink
-              to="/Drafts"
-              className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
-              activeClassName="bg-primaryOrange text-white"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="home_icons" xmlns="http://www.w3.org/2000/svg">
-<path d="M22 10V15C22 20 20 22 15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H14" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M22 10H18C15 10 14 9 14 6V2L22 10Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+              <NavLink
+                to="/Bookmarks"
+                className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
+                activeClassName="bg-primaryOrange text-white"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="home_icons"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.89 5.87988H5.10999C3.39999 5.87988 2 7.27987 2 8.98987V20.3499C2 21.7999 3.04 22.4199 4.31 21.7099L8.23999 19.5199C8.65999 19.2899 9.34 19.2899 9.75 19.5199L13.68 21.7099C14.95 22.4199 15.99 21.7999 15.99 20.3499V8.98987C16 7.27987 14.6 5.87988 12.89 5.87988Z"
+                    stroke="#292D32"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16 8.98987V20.3499C16 21.7999 14.96 22.4099 13.69 21.7099L9.76001 19.5199C9.34001 19.2899 8.65999 19.2899 8.23999 19.5199L4.31 21.7099C3.04 22.4099 2 21.7999 2 20.3499V8.98987C2 7.27987 3.39999 5.87988 5.10999 5.87988H12.89C14.6 5.87988 16 7.27987 16 8.98987Z"
+                    stroke="#292D32"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22 5.10999V16.47C22 17.92 20.96 18.53 19.69 17.83L16 15.77V8.98999C16 7.27999 14.6 5.88 12.89 5.88H8V5.10999C8 3.39999 9.39999 2 11.11 2H18.89C20.6 2 22 3.39999 22 5.10999Z"
+                    stroke="#292D32"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
 
+                <span>Bookmarks</span>
+              </NavLink>
+            </li>
 
-              <span>Drafts</span>
-            </NavLink>
+            {/* Drafts */}
+            <li className="mb-2">
+              <NavLink
+                to="/Drafts"
+                className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
+                activeClassName="bg-primaryOrange text-white"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="home_icons"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22 10V15C22 20 20 22 15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H14"
+                    stroke="#292D32"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22 10H18C15 10 14 9 14 6V2L22 10Z"
+                    stroke="#292D32"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <span>Drafts</span>
+              </NavLink>
             </li>
           </ul>
         </div>
 
-{/* logout */}
+        {/* logout */}
         <div>
-        <NavLink
-              to="/"
-              className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
-              activeClassName="bg-primaryOrange text-white"
+          <NavLink
+            to="/"
+            className="flex items-center text-textGrey gap-4 px-6 py-4 hover:bg-primaryOrange  hover:text-white home_icons"
+            activeClassName="bg-primaryOrange text-white"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="home_icons"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="home_icons"  xmlns="http://www.w3.org/2000/svg">
-<path d="M17.4399 14.62L19.9999 12.06L17.4399 9.5" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9.76001 12.0601H19.93" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.76 20C7.34001 20 3.76001 17 3.76001 12C3.76001 7 7.34001 4 11.76 4" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+              <path
+                d="M17.4399 14.62L19.9999 12.06L17.4399 9.5"
+                stroke="#292D32"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.76001 12.0601H19.93"
+                stroke="#292D32"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M11.76 20C7.34001 20 3.76001 17 3.76001 12C3.76001 7 7.34001 4 11.76 4"
+                stroke="#292D32"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
 
-
-              <span>Log out</span>
-            </NavLink>
+            <span>Log out</span>
+          </NavLink>
         </div>
       </div>
     </div>
