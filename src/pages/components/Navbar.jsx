@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/icons/chatCircleLogo.svg';
 import searchIcon from '../../assets/icons/search-normal.svg';
 import microphoneIcon from '../../assets/icons/microphone-2.svg';
+import messageIcon from '../../assets/icons/message.svg';
+import notificationIcon from '../../assets/icons/notification.svg';
+import profilePic from '../../assets/images/profile pic.png';
+
 
 const Navbar = () => {
   const [showProfileOptions, setShowProfileOptions] = useState(false);
@@ -35,11 +39,11 @@ const Navbar = () => {
         <button className="text-white hover:text-white border bg-primaryOrange border-primaryOrange p-2 min-w-min rounded rounded-xl text-center hidden md:flex ">ASK A QUESTION</button>
 
         {/* Icons Section */}
-        <div className="flex gap-2 w-32 p-2 justify-evenly items-center border border-red-600">
-          <FiMessageCircle className="text-gray-700" />
-          <FiBell className="text-gray-700" />
+        <div className="flex gap-4 w-32 justify-between items-center border border-red-600">
+        <img src={messageIcon} alt="Message Icon" />
+        <img src={notificationIcon} alt="Notification Icon" />
           <div className="relative">
-            <FiUser className="text-gray-700 cursor-pointer" onClick={toggleProfileOptions} />
+          <img src={profilePic} alt="Message Icon" className='cursor-pointer ' onClick={toggleProfileOptions}/>
             {showProfileOptions && (
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2">
                 <a href="#" className="block px-4 py-2 text-gray-700">View Profile</a>
