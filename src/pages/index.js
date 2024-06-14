@@ -7,4 +7,4 @@ export { default as SignUp } from './SignUp';
 export { default as Bookmarks } from './Bookmarks';
 export { default as Groups } from './Groups';
 export { default as CreateGroup } from './CreateGroup';
-
+export { default as ComingSoon } from './ComingSoon';
