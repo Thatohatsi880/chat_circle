@@ -15,7 +15,7 @@ const Sidebar = () => {
   return (
     <div className="relative">
       {/* Hamburger Menu */}
-      <button className="fixed top-4 left-4 md:hidden p-4 z-20" onClick={toggleSidebar}>
+      <button className="fixed top-4 left-4 md:hidden p-2 z-20 text-primaryOrange border rounded rounded-xl border-primaryOrange " onClick={toggleSidebar}>
         {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
       </button>
 
@@ -25,35 +25,6 @@ const Sidebar = () => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 md:relative md:translate-x-0 md:w-64 md:mt-0 md:shadow-none border border-black max-h-screen rounded-r-2xl`}
       >
-        <div className="md:hidden">
-          {/* Navbar for small screens */}
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center">
-            <Link to="/" className="text-white text-xl font-bold"><img src={logo} alt="chat circle logo" /></Link>
-              <div className="ml-6 relative">
-                <input type="text" className="border rounded p-2" placeholder="Search..." />
-                <button className="ml-2 bg-blue-500 text-white py-2 px-4 rounded">Ask a Question</button>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <FiMessageCircle className="text-gray-700 mx-4" />
-              <FiBell className="text-gray-700 mx-4" />
-              <div className="relative">
-                <FiUser
-                  className="text-gray-700 mx-4 cursor-pointer"
-                  onClick={toggleProfileOptions}
-                />
-                {showProfileOptions && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2">
-                    <a href="#" className="block px-4 py-2 text-gray-700">View Profile</a>
-                    <a href="#" className="block px-4 py-2 text-gray-700">Settings</a>
-                    <a href="#" className="block px-4 py-2 text-gray-700">Log Out</a>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="mb-6">
           
