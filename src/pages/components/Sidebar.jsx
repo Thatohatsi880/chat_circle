@@ -30,7 +30,7 @@ const Sidebar = () => {
           
           <ul>
             <li className="mb-2">
-              <a href="#" className="text-gray-700">
+              <a href="./HomePage" className="text-gray-700">
                 Home
               </a>
             </li>
@@ -79,13 +79,13 @@ const Sidebar = () => {
           <h2 className="text-lg font-bold mb-4">Groups</h2>
           <ul>
             <li className="mb-2 flex justify-between items-center">
-              <a href="#" className="text-gray-700">
+              <a href="./Groups" className="text-gray-700">
                 Groups
               </a>
               <FiPlus className="text-gray-700" />
             </li>
             <li className="mb-2">
-              <a href="#" className="text-gray-700">
+              <a href="CreateGroup" className="text-gray-700">
                 Create Group
               </a>
             </li>
@@ -94,17 +94,17 @@ const Sidebar = () => {
         <div>
           <ul>
             <li className="mb-2">
-              <a href="#" className="text-gray-700">
+              <a href="./Messages" className="text-gray-700">
                 Messages
               </a>
             </li>
             <li className="mb-2">
-              <a href="#" className="text-gray-700">
+              <a href="./Bookmarks" className="text-gray-700">
                 Bookmarks
               </a>
             </li>
             <li className="mb-2">
-              <Link to="/Drafts" className="text-gray-700">
+              <Link to="./Drafts" className="text-gray-700">
                 Drafts
               </Link>
             </li>

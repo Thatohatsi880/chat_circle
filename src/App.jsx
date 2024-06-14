@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, CreatePosts, Drafts, LandingPage, Login, SignUp, Bookmarks, Groups } from './pages';
+import { HomePage, CreatePosts, Drafts, LandingPage, Login, SignUp, Bookmarks, Groups, CreateGroup} from './pages';
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Bookmarks" element={<Bookmarks />} />
         <Route path="/Groups" element={<Groups />} />
+        <Route path="/CreateGroup" element={<CreateGroup />} />
       </Routes>
     </BrowserRouter>
   );

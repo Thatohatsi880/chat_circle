@@ -1,27 +1,35 @@
+// Groups.js
 import React, { useState } from 'react';
-import { FiBell, FiMessageSquare, FiUser, FiSearch, FiMic, FiChevronDown, FiPlus, FiBookmark, FiFileText, FiLogOut, FiFolder, FiFilter, FiCalendar } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
-import { Sidebar, Categories, Navbar } from './components';
+import { FiPlus, FiFilter, FiCalendar, FiChevronDown } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
+import { Sidebar, Navbar } from './components';
 
 const Groups = () => {
-//   const [userMenuVisible, setUserMenuVisible] = useState(false);
+  const [visibleGroups, setVisibleGroups] = useState(6); // Initial number of visible groups
   const navigate = useNavigate();
-
-//   const toggleUserMenu = () => {
-//     setUserMenuVisible(!userMenuVisible);
-//   };
 
   const createGroup = () => {
     navigate('/create-group');
   };
 
+  const handleViewMore = () => {
+    setVisibleGroups(visibleGroups + 3); // Increment the number of visible groups by 3
+  };
+
+  const renderGroups = (count) => {
+    const groups = [];
+    for (let i = 0; i < count; i++) {
+      groups.push(<div key={i} className="bg-gray-200 h-32 rounded"></div>);
+    }
+    return groups;
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
 
       <div className="flex flex-1">
-      <Sidebar />
+        <Sidebar />
 
         {/* Groups Section */}
         <div className="flex-1 mt-8 p-4">
@@ -42,10 +50,8 @@ const Groups = () => {
 
           <h2 className="text-xl font-bold mb-4">Popular Groups</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-            {/* Placeholder for popular groups */}
-            <div className="bg-gray-200 h-32 rounded"></div>
-            <div className="bg-gray-200 h-32 rounded"></div>
-            <div className="bg-gray-200 h-32 rounded"></div>
+            {/* Render initial placeholders for popular groups */}
+            {renderGroups(3)}
           </div>
 
           <h2 className="text-xl font-bold mb-4">Discover Groups</h2>
@@ -67,14 +73,15 @@ const Groups = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-            {/* Placeholder for discover groups */}
-            <div className="bg-gray-200 h-32 rounded"></div>
-            <div className="bg-gray-200 h-32 rounded"></div>
-            <div className="bg-gray-200 h-32 rounded"></div>
+            {/* Render discover groups placeholders */}
+            {renderGroups(visibleGroups)}
           </div>
 
           <div className="flex justify-center">
-            <button className="bg-gray-300 text-gray-700 py-2 px-4 rounded flex items-center">
+            <button
+              onClick={handleViewMore}
+              className="bg-gray-300 text-gray-700 py-2 px-4 rounded flex items-center"
+            >
               <span className="mr-2">View More</span>
               <FiChevronDown />
             </button>

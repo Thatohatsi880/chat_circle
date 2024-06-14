@@ -46,7 +46,7 @@ const Navbar = () => {
           <img src={profilePic} alt="Message Icon" className='cursor-pointer ' onClick={toggleProfileOptions}/>
             {showProfileOptions && (
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2">
-                <a href="#" className="block px-4 py-2 text-gray-700">View Profile</a>
+                <a href="./Profile" className="block px-4 py-2 text-gray-700">View Profile</a>
                 <a href="#" className="block px-4 py-2 text-gray-700">Settings</a>
                 <a href="#" className="block px-4 py-2 text-gray-700">Log Out</a>
               </div>
