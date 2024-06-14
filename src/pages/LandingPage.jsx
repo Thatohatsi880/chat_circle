@@ -29,7 +29,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className='container m-auto flex flex-col gap-10 px-4 md:p-0'>
+    <div className='container max-w-screen-xl m-auto flex flex-col gap-10 px-4 md:p-0'>
       <nav className="justify-between m-0 mt-4">
         <div className="container mx-auto flex justify-between items-center flex-col md:flex-row gap-6">
           <Link to="/" className="text-white text-xl font-bold"><img src={logo} alt="chat circle logo" /></Link>
