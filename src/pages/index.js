@@ -10,4 +10,7 @@ export { default as Groups } from './Groups';
 =======
 >>>>>>> Stashed changes
 export { default as CreateGroup } from './CreateGroup';
-
+export { default as ComingSoon } from './ComingSoon';
+export { default as ForgotPassword } from './ForgotPassword';
+export { default as NewPassword } from './NewPassword';
+export { default as PostDetails } from './PostDetails';

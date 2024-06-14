@@ -31,16 +31,16 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <Link to="/" className=""><img src={logo} alt="Chat Circle Logo" /></Link>
             <div className="mt-2 w-full md:w-72">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+            Find answers, share knowledge, and connect with passionate people.
             </div>
           </div>
           <div className="mb-4 md:mb-0">
             <h4 className="font-bold mb-2">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/ask">Ask a Question</Link></li>
-              <li><Link to="/categories">Categories</Link></li>
-              <li><Link to="/drafts">Drafts</Link></li>
-              <li><Link to="/help">Help</Link></li>
+              <li><Link to="/CreatePost">Ask a Question</Link></li>
+              <li><Link to="/HomePage">Categories</Link></li>
+              <li><Link to="/Drafts">Drafts</Link></li>
+              <li><Link to="/ComingSoon">Help</Link></li>
             </ul>
           </div>
           <div>
