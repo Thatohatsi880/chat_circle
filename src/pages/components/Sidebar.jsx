@@ -247,7 +247,7 @@ const Sidebar = () => {
               <span>Messages</span>
             </NavLink>
             </li> 
-         
+
           {/* Bookmarks */}
             <li className="mb-2">
             <NavLink
@@ -281,6 +281,9 @@ const Sidebar = () => {
 
               <span>Drafts</span>
             </NavLink>
+            </li>
+          </ul>
+        </div>
 
 {/* logout */}
         <div>
@@ -300,8 +303,6 @@ const Sidebar = () => {
             </NavLink>
         </div>
       </div>
-      </div>
-    </div>
     </div>
   );
 };
