@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/crypto-js": "^4.2.2",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "date-fns": "^3.6.0",
     "debug": "^4.3.5",
     "dotenv": "^16.4.5",
