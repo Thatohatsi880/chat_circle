@@ -15,9 +15,9 @@ const Navbar = () => {
   const toggleProfileOptions = () => setShowProfileOptions(!showProfileOptions);
 
   return (
-    <div className="flex w-full gap-4 justify-between items-center bg-white p-4 shadow-md border border-black">
+    <div className="flex w-full gap-4 justify-between items-center bg-white p-4 shadow-md">
         {/* Logo and Search Section */}
-        <div className="flex items-center justify-between ml-14 md:ml-0 flex-grow gap-4 border border-red-700 max-w-4xl ">
+        <div className="flex items-center justify-between ml-14 md:ml-0 flex-grow gap-4 max-w-4xl ">
               <Link to="/" className="text-white text-xl font-bold hidden md:flex"><img src={logo} alt="chat circle logo" /></Link>
               <div className="relative w-full max-w-lg">
             <div className="flex items-center">  
@@ -39,7 +39,7 @@ const Navbar = () => {
         <button className="text-white hover:text-white border bg-primaryOrange border-primaryOrange p-2 min-w-min rounded rounded-xl text-center hidden md:flex ">ASK A QUESTION</button>
 
         {/* Icons Section */}
-        <div className="flex gap-4 w-32 justify-between items-center border border-red-600">
+        <div className="flex gap-4 w-32 justify-between items-center">
         <img src={messageIcon} alt="Message Icon" />
         <img src={notificationIcon} alt="Notification Icon" />
           <div className="relative">
