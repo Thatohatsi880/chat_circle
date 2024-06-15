@@ -1,19 +1,20 @@
-import { Link } from 'react-router-dom';
-import logo from '../../assets/icons/chatCircleLogo.svg';
-import envelopeIcon from '../../assets/icons/mail.svg';
+import { Link } from "react-router-dom";
+import logo from "../../assets/icons/chatCircleLogo.svg";
+import envelopeIcon from "../../assets/icons/mail.svg";
 
 const Footer = () => {
-
-    return (
-      <footer className="bg-lightOrange p-4 text-textGrey">
+  return (
+    <footer className="bg-lightOrange p-4 text-textGrey">
       <div className="container mx-auto">
         <div className="relative flex flex-col sm:flex-row items-center mb-4 bg-white p-4 rounded-md justify-between max-w-4xl gap-3">
           <div className="flex items-center w-full sm:w-auto mb-4 md:mb-0">
-            <div className='w-12 h-12 bg-lightOrange rounded flex justify-center items-center mr-3'>
+            <div className="w-12 h-12 bg-lightOrange rounded flex justify-center items-center mr-3">
               <img src={envelopeIcon} alt="Envelope Icon" />
             </div>
             <div className="flex-grow md:flex-grow-0 md:w-3/10 text-center md:text-left">
-              <p className='font-bold text-base'>Sign-up to receive email updates</p>
+              <p className="font-bold text-base">
+                Sign-up to receive email updates
+              </p>
             </div>
           </div>
           <div className="relative flex-grow flex items-center justify-center w-full md:w-80 lg:w-96">
@@ -29,18 +30,28 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-between mb-4">
           <div className="mb-4 md:mb-0">
-            <Link to="/" className=""><img src={logo} alt="Chat Circle Logo" /></Link>
+            <Link to="/" className="">
+              <img src={logo} alt="Chat Circle Logo" />
+            </Link>
             <div className="mt-2 w-full md:w-72">
-            Find answers, share knowledge, and connect with passionate people.
+              Find answers, share knowledge, and connect with passionate people.
             </div>
           </div>
           <div className="mb-4 md:mb-0">
             <h4 className="font-bold mb-2">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/CreatePosts">Ask a Question</Link></li>
-              <li><Link to="/HomePage">Categories</Link></li>
-              <li><Link to="/Drafts">Drafts</Link></li>
-              <li><Link to="/ComingSoon">Help</Link></li>
+              <li>
+                <Link to="/CreatePosts">Ask a Question</Link>
+              </li>
+              <li>
+                <Link to="/HomePage">Categories</Link>
+              </li>
+              <li>
+                <Link to="/Drafts">Drafts</Link>
+              </li>
+              <li>
+                <Link to="/ComingSoon">Help</Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -54,14 +65,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-    
-    
-    
+  );
+};
 
-
-    
-    )
-    
-}
-
-export default Footer
+export default Footer;
