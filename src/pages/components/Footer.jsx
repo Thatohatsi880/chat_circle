@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <h4 className="font-bold mb-2">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/CreatePost">Ask a Question</Link></li>
+              <li><Link to="/CreatePosts">Ask a Question</Link></li>
               <li><Link to="/HomePage">Categories</Link></li>
               <li><Link to="/Drafts">Drafts</Link></li>
               <li><Link to="/ComingSoon">Help</Link></li>

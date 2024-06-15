@@ -49,22 +49,22 @@ const CreateGroup = () => {
          <div className='border rounded rounded-2xl bg-gray-100 p-3 flex justify-between gap-8'>
          <form onSubmit={handleSubmit} className='w-auto'>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2 font-bold">Title</label>
+              <label className="block text-gray-700 mb-2 font-bold">Title:</label>
               <input
                 type="text"
                 value={title}
                 onChange={handleTitleChange}
-                className="border rounded w-full py-2 px-3"
-                placeholder="Post Title"
+                className="border rounded w-full py-2 px-3 placeholder:text-sm"
+                placeholder="Enter title here e.g Starting a Garden"
               />
             </div>
             <div className="mb-4">
-            <label className="block text-gray-700 mb-2 font-bold">Description</label>
+            <label className="block text-gray-700 mb-2 font-bold">Description:</label>
               <textarea
                 value={content}
                 onChange={handleContentChange}
                 className="border rounded w-full py-2 px-3"
-                placeholder="Post Content"
+                placeholder="Enter you question here......"
                 rows="10"
               />
             </div>
