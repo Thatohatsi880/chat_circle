@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/icons/chatCircleLogo.svg";
 import forgotPwdImg from "../assets/icons/fgtPwdIllustration.svg";
 
@@ -10,10 +10,13 @@ const ForgotPassword = () => {
     setEmail(e.target.value);
   };
 
+  const navigate = useNavigate()
+
   const handleResetPassword = (e) => {
     e.preventDefault();
     // Implement password reset functionality here
     console.log("Reset link sent to:", email);
+    navigate('/NewPassword')
   };
 
   return (

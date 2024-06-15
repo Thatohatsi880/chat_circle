@@ -102,7 +102,7 @@ const Login = () => {
                 placeholder="Enter email here"
               />
             </div>
-            <div className="mb-6 relative">
+            <div className="mb-1 relative">
               <label htmlFor="password" className="block text-gray-700">
                 Password:
               </label>
@@ -128,9 +128,7 @@ const Login = () => {
             </div>
             <div className="mb-4 flex justify-between items-center">
               <p className="text-sm text-left text-gray-600">
-                <a href="/reset-password" className="text-blue-500">
-                  Forgot password?
-                </a>
+                <Link to={'/ForgotPassword'} className="text-primaryOrange">Forgot password?</Link>
               </p>
             </div>
             <div className="mb-4 flex items-center">
@@ -152,7 +150,7 @@ const Login = () => {
             >
               <Link
                 to="/HomePage"
-                className="text-textGrey font-bold underline"
+                className="text-white font-bold"
               >
                 SIGN IN
               </Link>
