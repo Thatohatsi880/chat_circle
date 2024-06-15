@@ -1,15 +1,43 @@
-import React, { useState } from 'react';
-import { FiBell, FiMessageSquare, FiUser, FiChevronDown, FiPlus, FiSearch, FiMic } from 'react-icons/fi';
-import { Link } from 'react-router-dom'; 
-import { Navbar, Sidebar } from './components';
+import React, { useState } from "react";
+import {
+  FiBell,
+  FiMessageSquare,
+  FiUser,
+  FiChevronDown,
+  FiPlus,
+  FiSearch,
+  FiMic,
+} from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { Navbar, Sidebar } from "./components";
 
 const Drafts = () => {
   const [userMenuVisible, setUserMenuVisible] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, text: 'Hello, how are you?', time: '10:00 AM', date: '2024-06-11' },
-    { id: 2, text: 'I am good, thanks! What about you?', time: '10:05 AM', date: '2024-06-11' },
-    { id: 3, text: 'This is another draft message.', time: '11:00 AM', date: '2024-06-11' },
-    { id: 4, text: 'Draft message example.', time: '11:30 AM', date: '2024-06-12' },
+    {
+      id: 1,
+      text: "Hello, how are you?",
+      time: "10:00 AM",
+      date: "2024-06-11",
+    },
+    {
+      id: 2,
+      text: "I am good, thanks! What about you?",
+      time: "10:05 AM",
+      date: "2024-06-11",
+    },
+    {
+      id: 3,
+      text: "This is another draft message.",
+      time: "11:00 AM",
+      date: "2024-06-11",
+    },
+    {
+      id: 4,
+      text: "Draft message example.",
+      time: "11:30 AM",
+      date: "2024-06-12",
+    },
   ]);
   const [selectedMessages, setSelectedMessages] = useState({});
   const [showDateFilter, setShowDateFilter] = useState(false);
@@ -27,7 +55,7 @@ const Drafts = () => {
   };
 
   const deleteSelectedMessages = () => {
-    setMessages(messages.filter(message => !selectedMessages[message.id]));
+    setMessages(messages.filter((message) => !selectedMessages[message.id]));
     setSelectedMessages({});
   };
 
@@ -42,16 +70,19 @@ const Drafts = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar /> {/* Navbar component */}
-
       <div className="flex flex-1">
-      <Sidebar /> {/* Sidebar component */}
-
+        <Sidebar /> {/* Sidebar component */}
         {/* Drafts Section */}
         <div className="flex-1 mt-8 p-4">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold">Drafts</h2>
             <div className="flex space-x-4">
-              <Link to={'/CreatePosts'} className="text-primaryOrange hover:bg-primaryOrange hover:text-white border border-primaryOrange py-2 px-4 rounded rounded-xl text-center font-bold">New Question</Link>
+              <Link
+                to={"/CreatePosts"}
+                className="text-primaryOrange hover:bg-primaryOrange hover:text-white border border-primaryOrange py-2 px-4 rounded rounded-xl text-center font-bold"
+              >
+                New Question
+              </Link>
               <button
                 onClick={deleteSelectedMessages}
                 className="bg-red-500 text-white py-2 px-4 rounded"

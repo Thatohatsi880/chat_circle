@@ -139,21 +139,19 @@ const HomePage = () => {
 
           <div className="flex flex-col md:flex-row justify-between gap-auto mb-7 border-grey-200 border-t-0 border-l-0 border-r-0 w-full text-center">
             <div className=" w-full md:w-9/12 flex flex-col md:flex-row justify-between p-4">
-            <div className="text-lg font-bold focus:outline-none min-w-36 ">
-              <span className="underlines">Recent Discussions</span>
+              <div className="text-lg font-bold focus:outline-none min-w-36 ">
+                <span className="underlines">Recent Discussions</span>
+              </div>
+              <div className="text-lg font-bold focus:outline-none  min-w-36">
+                Engaging Threads
+              </div>
+              <div className="text-lg font-bold focus:outline-none min-w-36">
+                Groups
+              </div>
             </div>
-            <div className="text-lg font-bold focus:outline-none  min-w-36">
-              Engaging Threads
-            </div>
-            <div className="text-lg font-bold focus:outline-none min-w-36">
-              Groups
-            </div>
-            </div>
-            
+
             <Categories />
           </div>
-
-         
         </div>
       </div>
     </div>

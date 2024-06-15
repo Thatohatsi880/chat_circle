@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { FiPlus, FiFilter, FiCalendar, FiChevronDown } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
-import { Sidebar, Navbar } from './components';
+import React, { useState } from "react";
+import { FiPlus, FiFilter, FiCalendar, FiChevronDown } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { Sidebar, Navbar } from "./components";
 
 const Groups = () => {
   const [visibleGroups, setVisibleGroups] = useState(6); // Initial number of visible groups
   const navigate = useNavigate();
 
   const createGroup = () => {
-    navigate('/create-group');
+    navigate("/create-group");
   };
 
   const handleViewMore = () => {
