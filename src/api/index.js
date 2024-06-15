@@ -4,7 +4,7 @@ export const createUser = async (body) => {
 
   try {
 
-    const response = await fetch(`http://localhost:3011/user`, {
+    const response = await fetch(`https://chat-circle-zib6.onrender.com/auth/register`, {
       method: "POST",
       body: body,
       headers: {
