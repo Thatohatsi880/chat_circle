@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage, CreatePosts, Drafts, LandingPage, Login, SignUp, Bookmarks, Groups, CreateGroup, ComingSoon, ForgotPassword, NewPassword, PostDetails } from './pages';
+import { HomePage, CreatePosts, Drafts, LandingPage, Login, SignUp, Bookmarks, Groups, CreateGroup, ComingSoon, ForgotPassword, NewPassword, PostDetails, Profile } from './pages';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
         <Route path="NewPassword" element={<NewPassword/>} />
         <Route path="PostDetails" element={<PostDetails/>} />
+        <Route path="Profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
   );

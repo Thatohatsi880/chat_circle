@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FiMessageCircle, FiBell, FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo from "../../assets/icons/chatCircleLogo.svg";
 import searchIcon from "../../assets/icons/search-normal.svg";
@@ -57,15 +56,7 @@ const Navbar = () => {
           />
           {showProfileOptions && (
             <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2">
-              <a href="#" className="block px-4 py-2 text-gray-700">
-                View Profile
-              </a>
-              <a href="#" className="block px-4 py-2 text-gray-700">
-                Settings
-              </a>
-              <a href="#" className="block px-4 py-2 text-gray-700">
-                Log Out
-              </a>
+              <Link to={'/Profile'} className="block px-4 py-2 text-gray-700">View Profile</Link>
             </div>
           )}
         </div>

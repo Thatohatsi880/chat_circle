@@ -8,7 +8,7 @@ const Groups = () => {
   const navigate = useNavigate();
 
   const createGroup = () => {
-    navigate("/create-group");
+    navigate("/CreateGroup");
   };
 
   const handleViewMore = () => {
@@ -33,21 +33,21 @@ const Groups = () => {
         {/* Groups Section */}
         <div className="flex-1 mt-8 p-4">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold">Groups</h2>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Pending Invitation: 0</span>
+            <h2 className="text-2xl font-bold text-textGrey">Groups</h2>
+            <div className="flex items-center space-x-4 text-primaryOrange">
+              <p><span className="text-gray-700">Pending Invitation: </span>  0</p>
               <button
                 onClick={createGroup}
-                className="bg-blue-500 text-white py-2 px-4 rounded flex items-center"
+                className=" py-2 px-4 rounded flex items-center text-primaryOrange hover:bg-primaryOrange hover:text-white border border-primaryOrange rounded-xl text-center font-bold"
               >
-                <FiPlus className="mr-2" /> Create Group
+                Create Group
               </button>
             </div>
           </div>
 
           <hr className="mb-4" />
 
-          <h2 className="text-xl font-bold mb-4">Popular Groups</h2>
+          <h2 className="text-xl font-bold mb-4 text-textGrey">Popular Groups</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
             {/* Render initial placeholders for popular groups */}
             {renderGroups(3)}
@@ -79,7 +79,7 @@ const Groups = () => {
           <div className="flex justify-center">
             <button
               onClick={handleViewMore}
-              className="bg-gray-300 text-gray-700 py-2 px-4 rounded flexg items-center"
+              className="text-primaryOrange py-2 px-4 rounded flex items-center"
             >
               <span className="mr-2">View More</span>
               <FiChevronDown />

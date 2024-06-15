@@ -11,3 +11,4 @@ export { default as ForgotPassword } from './ForgotPassword';
 export { default as NewPassword } from './NewPassword';
 export { default as PostDetails } from './PostDetails';
 export { default as Groups } from './Groups';
+export { default as Profile } from './Profile';

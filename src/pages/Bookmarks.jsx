@@ -55,9 +55,9 @@ const Bookmarks = () => {
             <h2 className="text-2xl font-bold">Saved Posts</h2>
             <button
               onClick={deleteSelectedBookmarks}
-              className="bg-red-500 text-white py-2 px-4 rounded"
+              className="bg-gray-500 text-white py-2 px-12 rounded rounded-xl"
             >
-              Delete Selected
+              DELETE
             </button>
           </div>
 

@@ -79,15 +79,15 @@ const Drafts = () => {
             <div className="flex space-x-4">
               <Link
                 to={"/CreatePosts"}
-                className="text-primaryOrange hover:bg-primaryOrange hover:text-white border border-primaryOrange py-2 px-4 rounded rounded-xl text-center font-bold"
+                className="hover:text-primaryOrange hover:bg-white bg-primaryOrange text-white border border-primaryOrange px-5 py-2 rounded rounded-xl text-center"
               >
-                New Question
+                NEW QUESTION
               </Link>
               <button
                 onClick={deleteSelectedMessages}
-                className="bg-red-500 text-white py-2 px-4 rounded"
+                className="bg-gray-500 text-white py-2 px-12 rounded rounded-xl"
               >
-                Delete Selected
+                DELETE
               </button>
             </div>
           </div>
