@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React, { useState } from 'react';
 import { FiUser, FiMail, FiPhone, FiMapPin, FiLock, FiLogOut } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
@@ -97,4 +95,3 @@ const Profile = () => {
 };
 
 export default Profile;
->>>>>>> Stashed changes
