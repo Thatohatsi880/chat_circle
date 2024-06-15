@@ -36,7 +36,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* Ask a Question Button */}
-        <button className="text-white hover:text-white border bg-primaryOrange border-primaryOrange p-2 min-w-min rounded rounded-xl text-center hidden md:flex ">ASK A QUESTION</button>
+        <Link to='/CreatePosts' className="text-white hover:text-white border bg-primaryOrange border-primaryOrange p-2 min-w-min rounded rounded-xl text-center hidden md:flex ">ASK A QUESTION</Link>
 
         {/* Icons Section */}
         <div className="flex gap-4 w-32 justify-between items-center">

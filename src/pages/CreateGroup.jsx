@@ -71,6 +71,7 @@ const CreateGroup = () => {
             <div className="mb-4">
               <label className="block text-gray-700 mb-2 font-bold">Photo (optional)</label>
               <div className="border-2 border-dashed rounded p-4 text-center">
+              <input type="file" />
                 Drag and drop or click to upload
               </div>
             </div>
