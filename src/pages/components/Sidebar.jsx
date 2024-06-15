@@ -4,13 +4,8 @@ import {
   FiPlus,
   FiX,
   FiMenu,
-  FiMessageCircle,
-  FiBell,
-  FiUser,
 } from "react-icons/fi";
 import { NavLink, Link } from "react-router-dom";
-import homeIcon from "../../assets/icons/home.svg";
-import groupIcon from "../../assets/icons/people.svg";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);

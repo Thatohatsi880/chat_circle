@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Sidebar, Categories, Navbar } from "./components";
+import { Navbar, Sidebar, Categories } from "./components";
 import cardImage from "../assets/images/cardImg.png";
 import clockIcon from "../assets/icons/clock.svg";
 
@@ -20,6 +19,7 @@ const HomePage = () => {
           </h2>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 px-0 py-4 rounded-lg mb-6 ">
             {/* Post Cards */}
+            <Link to={'/PostDetails'}>
             <div className="bg-cardBg_grey text-white py-8 px-4 rounded-2xl max-w-[420px] flex flex-col gap-4 text-sm">
               <h3 className="text-primaryOrange font-bold">
                 Difference between UI and UX
@@ -58,6 +58,9 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+            </Link>
+
+            <Link to={'/PostDetails'}>
             <div className="bg-cardBg_grey text-white py-8 px-4 rounded-2xl max-w-[420px] flex flex-col gap-4 text-sm">
               <h3 className="text-primaryOrange font-bold">
                 Difference between UI and UX
@@ -96,6 +99,10 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+            </Link>
+            
+
+            <Link to={'/PostDetails'}>
             <div className="bg-cardBg_grey text-white py-8 px-4 rounded-2xl max-w-[420px] flex flex-col gap-4 text-sm">
               <h3 className="text-primaryOrange font-bold">
                 Difference between UI and UX
@@ -134,6 +141,8 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+            </Link>
+            
             {/* Placeholder for chats */}
           </div>
 

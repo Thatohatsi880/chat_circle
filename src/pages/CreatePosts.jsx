@@ -41,7 +41,7 @@ const CreatePosts = () => {
         <Sidebar /> {/* Sidebar component */}
         <div className="flex-1 p-4 mt-8">
           <div className="flex justify-between items-center mb-4 border border-grey-200 border-t-0 border-l-0 border-r-0 pb-6">
-            <div className="flex gap-5 justify-between items-center border">
+            <div className="flex gap-5 justify-between items-center">
               <button className="text-textGrey">
                 <img src={backIcon} alt="" />
               </button>
