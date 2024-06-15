@@ -7,4 +7,4 @@ export { default as SignUp } from './SignUp';
 export { default as Bookmarks } from './Bookmarks';
 export { default as CreateGroup } from './CreateGroup';
 export { default as Profile } from './Profile';
-
+export { default as PostDetails} from './PostDetails';
